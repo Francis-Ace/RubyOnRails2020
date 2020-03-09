@@ -7,3 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #To run use -> rails db:seed
+
+Player.destroy_all
+Team.destroy_all
+
+NUMBER_OF_TEAMS = 15
+
+NUMBER_OF_TEAMS.times do
+  team_name = Faker::Sports::Basketball.unique.team
+  team_points = rand(1..100)
+  team = Team.create(name: team_name, points: team_points)
+
+  number_of_players = rand(10..15)
+  number_of_players.times do
+    # The created player's team_id(FK) will be assigned the team's PK
+    team.players.create(name: Faker::Sports::Basketball.player)
+  end
+end
+
+puts "Created #{Team.count} Teams."
+puts "Created #{Player.count} Players"
