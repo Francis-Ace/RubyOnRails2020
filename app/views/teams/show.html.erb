@@ -4,7 +4,19 @@
  <p><%= @team.name %> have <%= @team.players.count %> players.</p>
 <p><%= @team.name %> have won <%= @team.points %> games this season.</p>
 
-<h3>
+
+<h3>The coach of <%= @team.name%></p>
+<%if @team.coaches.empty?%>
+  <p>There is no coach in this team</p>
+<%else%>
+  <ul>
+    <% @team.coaches.each do |coach| %>
+      <li><%= link_to coach.name, coach_path(coach) %></li>
+      <%end%>
+  </ul>
+<%end%>
+
+<h3>Players for the <%= @team.name%></p>
 <%if @team.players.empty?%>
   <p>There are no players in this team</p>
 <%else%>

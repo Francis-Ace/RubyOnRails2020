@@ -7,7 +7,7 @@
   <ul>
     <% @coaches.each do |coach| %>
       <li>
-        <%= link_to coach.name, player_path(coach) %> is the coach of
+        <%= link_to coach.name, coach_path(coach) %> is the coach of
         <%= link_to coach.team.name, coach.team %>
       </li>
       <% end %>
