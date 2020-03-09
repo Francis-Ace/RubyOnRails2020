@@ -1,0 +1,16 @@
+<%# <h1>Teams#show</h1>
+<p>Find me in app/views/teams/show.html.erb</p> %>
+<h2><%= @team.name %></h2>
+ <p><%= @team.name %> have <%= @team.players.count %> players.</p>
+<p><%= @team.name %> have won <%= @team.points %> games this season.</p>
+
+<h3>
+<%if @team.players.empty?%>
+  <p>There are no players in this team</p>
+<%else%>
+  <ul>
+    <% @team.players.each do |player| %>
+      <li><%= player.name %></li>
+      <%end%>
+  </ul>
+<%end%>
