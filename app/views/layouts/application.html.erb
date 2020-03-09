@@ -8,10 +8,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <header><h1><%= link_to "NBA Teams and Players", root_path%></h1></header>
-  <body>
 
+  <body class="container">
+    <header><h1><%= link_to "NBA Teams and Players", root_path%></h1></header>
     <%= yield %>
+    <footer>Fullstack Web Dev 2020</footer>
   </body>
 </html>
 
