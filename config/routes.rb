@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'coaches/index'
-  get 'coaches/show'
+  # get 'coaches/index'
+  # get 'coaches/show'
   # get 'players/index'
   # get 'players/show'
   # get 'teams/index'
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # GET / => teams#index
 
   root to: 'teams#index'
-  
+
   # GET 'teams', to: 'teams#index'
   # # GET /teams/:id => teams/show
   # GET "teams/:id", to: 'teams#show', id: /\d+/, as: 'team' # team_path
@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   resources 'players', only: [:index, :show]
   # GET /players => players#index
   # GET /players/:id => players#show
+
+  resources 'coaches', only: [:index, :show]
+  # GET /players => coaches#index
+  # GET /players/:id => coaches#show
 end
