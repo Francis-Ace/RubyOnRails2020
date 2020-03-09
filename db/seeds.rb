@@ -11,7 +11,7 @@
 Player.destroy_all
 Team.destroy_all
 
-NUMBER_OF_TEAMS = 15
+NUMBER_OF_TEAMS = 30
 
 NUMBER_OF_TEAMS.times do
   team_name = Faker::Sports::Basketball.unique.team

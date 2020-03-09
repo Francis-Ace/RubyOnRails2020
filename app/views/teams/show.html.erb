@@ -10,7 +10,7 @@
 <%else%>
   <ul>
     <% @team.players.each do |player| %>
-      <li><%= player.name %></li>
+      <li><%= link_to player.name, player_path(player) %></li>
       <%end%>
   </ul>
 <%end%>
