@@ -9,6 +9,7 @@
 #To run use -> rails db:seed
 
 Player.destroy_all
+Coach.destroy_all
 Team.destroy_all
 
 NUMBER_OF_TEAMS = 30
@@ -18,6 +19,8 @@ NUMBER_OF_TEAMS.times do
   team_points = rand(1..100)
   team = Team.create(name: team_name, points: team_points)
 
+  team.coaches.create(name: Faker::Sports::Basketball.unique.coach)
+
   number_of_players = rand(10..15)
   number_of_players.times do
     # The created player's team_id(FK) will be assigned the team's PK
@@ -26,4 +29,5 @@ NUMBER_OF_TEAMS.times do
 end
 
 puts "Created #{Team.count} Teams."
+puts "Created #{Coach.count} Coaches"
 puts "Created #{Player.count} Players"
