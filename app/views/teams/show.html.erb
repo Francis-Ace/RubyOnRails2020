@@ -5,7 +5,7 @@
 <p><%= @team.name %> have won <%= @team.points %> games this season.</p>
 
 
-<h3>The coach of <%= @team.name%></p>
+<h3>The coaches of <%= @team.name%></h3>
 <%if @team.coaches.empty?%>
   <p>There is no coach in this team</p>
 <%else%>
@@ -16,7 +16,7 @@
   </ul>
 <%end%>
 
-<h3>Players for the <%= @team.name%></p>
+<h3>Players for the <%= @team.name%></h3>
 <%if @team.players.empty?%>
   <p>There are no players in this team</p>
 <%else%>

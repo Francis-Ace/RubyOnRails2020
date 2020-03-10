@@ -4,9 +4,11 @@
   <p>There are no teams available.</p>
 <%else%>
 <% @teams.each do |team| %>
+<div class="border border-secondary" style="margin-bottom: 5px">
   <h2><%= team.name %></h2>
   <p><%= team.name %> have <%= team.players.count %> players.</p>
   <p><%= team.name %> have won <%= team.points %> games this season.</p>
   <p>To learn more about <%= link_to team.name, team %>.</p>
+  </div>
   <%end%>
 <%end%>

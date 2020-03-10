@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="container">
@@ -14,7 +14,7 @@
     <%# <header><h1 class="test"><%= link_to "NBA Teams and Players", root_path </h1></header> %>
     <header>
     <%# <h1>NBA teams and players list</h1> %>
-    <h1 class="Tittle"><%= link_to "NBA Teams and Players", root_path %></h1>
+    <h1 class="shadow p-3 mb-5 bg-white rounded"><%= link_to "NBA Teams and Players", root_path %></h1>
     <p>
       <%= link_to 'Home', root_path%> |
       <%= link_to 'Players', players_path%> |
