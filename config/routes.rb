@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pages
   # get 'coaches/index'
   # get 'coaches/show'
   # get 'players/index'
