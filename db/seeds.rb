@@ -19,7 +19,10 @@ NUMBER_OF_TEAMS.times do
   team_points = rand(1..100)
   team = Team.create(name: team_name, points: team_points)
 
-  team.coaches.create(name: Faker::Sports::Basketball.unique.coach)
+  number_of_coaches = rand(1..2)
+  number_of_coaches.times do
+    team.coaches.create(name: Faker::Sports::Basketball.coach)
+  end
 
   number_of_players = rand(10..15)
   number_of_players.times do
