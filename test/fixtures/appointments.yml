@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coach: one
+  player: one
+  appointment_date: 2020-03-12 02:21:32
+
+two:
+  coach: two
+  player: two
+  appointment_date: 2020-03-12 02:21:32
