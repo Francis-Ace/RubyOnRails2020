@@ -7,7 +7,7 @@ class ApplicationRecord < ActiveRecord::Base
     self.offset(random_offset).limit(size_of_collection)
   end
 
-  def selt.random
+  def self.random
     random_collection(1).first
   end
 end
