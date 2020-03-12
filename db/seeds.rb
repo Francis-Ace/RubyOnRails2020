@@ -33,10 +33,10 @@ NUMBER_OF_TEAMS.times do
   end
 end
 
-coaches_with_appointments = Coach.all.sample(50)
+coaches_with_appointments = Coach.random_collection(50)
 
 coaches_with_appointments.each do |coach|
-  players = Player.all.sample(4)
+  players = Player.random_collection(4)
   players.each do |player|
     Appointment.create(coach: coach,
                       player: player,
