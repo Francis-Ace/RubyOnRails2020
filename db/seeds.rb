@@ -8,6 +8,7 @@
 
 #To run use -> rails db:seed
 
+Appointment.destroy_all
 Page.destroy_all
 Player.destroy_all
 Coach.destroy_all
@@ -20,7 +21,7 @@ NUMBER_OF_TEAMS.times do
   team_points = rand(1..100)
   team = Team.create(name: team_name, points: team_points)
 
-  number_of_coaches = rand(1..2)
+  number_of_coaches = rand(3..4)
   number_of_coaches.times do
     team.coaches.create(name: Faker::Sports::Basketball.coach)
   end
@@ -32,8 +33,20 @@ NUMBER_OF_TEAMS.times do
   end
 end
 
-Page.create(title: "About", content: "Fill this with content", pemalink: "about_us")
+coaches_with_appointments = Coach.all.sample(50)
+
+coaches_with_appointments.each do |coach|
+  players = Player.all.sample(4)
+  players.each do |player|
+    Appointment.create(coach: coach,
+                      player: player,
+                      appointment_date:Faker::Time.forward(50, period: :morning))
+  end
+end
+
+Page.create(title: "About", content: "Fill this with content", permalink: "about_us")
 
 puts "Created #{Team.count} Teams."
 puts "Created #{Coach.count} Coaches"
 puts "Created #{Player.count} Players"
+puts "Created #{Appointment.count} Appointnments"
