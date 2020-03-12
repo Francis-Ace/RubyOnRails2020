@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :pages
   # get 'coaches/index'
   # get 'coaches/show'
   # get 'players/index'
@@ -25,4 +24,9 @@ Rails.application.routes.draw do
   resources 'coaches', only: [:index, :show]
   # GET /players => coaches#index
   # GET /players/:id => coaches#show
+
+  resources :pages
+  # Generate all of the 7 RESTful routes
+
+  get ":permalink", to: 'pages#permalink', as: "permalink"
 end

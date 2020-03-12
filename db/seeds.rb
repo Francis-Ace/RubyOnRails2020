@@ -8,6 +8,7 @@
 
 #To run use -> rails db:seed
 
+Page.destroy_all
 Player.destroy_all
 Coach.destroy_all
 Team.destroy_all
@@ -30,6 +31,8 @@ NUMBER_OF_TEAMS.times do
     team.players.create(name: Faker::Sports::Basketball.player)
   end
 end
+
+Page.create(title: "About", content: "Fill this with content", pemalink: "about_us")
 
 puts "Created #{Team.count} Teams."
 puts "Created #{Coach.count} Coaches"
