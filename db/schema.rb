@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_024833) do
+ActiveRecord::Schema.define(version: 2020_03_12_072132) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer "coach_id", null: false
+    t.integer "player_id", null: false
+    t.datetime "appointment_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coach_id"], name: "index_appointments_on_coach_id"
+    t.index ["player_id"], name: "index_appointments_on_player_id"
+  end
 
   create_table "coaches", force: :cascade do |t|
     t.string "name"
@@ -43,6 +53,8 @@ ActiveRecord::Schema.define(version: 2020_03_10_024833) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "appointments", "coaches"
+  add_foreign_key "appointments", "players"
   add_foreign_key "coaches", "teams"
   add_foreign_key "players", "teams"
 end
