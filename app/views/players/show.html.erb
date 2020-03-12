@@ -2,3 +2,14 @@
 <p>Find me in app/views/players/show.html.erb</p> %>
 <h2><%= @player.name %></h2>
 <p><%= @player.name%> is a member of the <%= link_to @player.team.name, @player.team %></p>
+
+<h3>Appointments</h3>
+<% if @player.appointments.empty? %>
+  <p>No appointments for <%= @player.name %></p>
+<% else %>
+  <ul>
+    <% @player.appointments.order(:appointment_date).each do |app| %>
+      <li>Appointment with <%= link_to app.coach.name, app.coach %> on <%= app.appointment_date%>.</li>
+    <% end %>
+  </ul>
+<% end %>
